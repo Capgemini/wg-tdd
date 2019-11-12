@@ -1,12 +1,23 @@
 package com.capgemini.tdd.demo.it.specs
 
+import com.capgemini.tdd.demo.DemoApplication
 import groovyx.net.http.RESTClient
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.TestPropertySource
+import spock.lang.Shared
 import spock.lang.Specification
 
+@SpringBootTest(classes = DemoApplication, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@TestPropertySource(properties = "server.port=8090")
 class DemoApplicationITSpec extends Specification {
-    static String testURL = "http://localhost:8080"
 
-    RESTClient restClient = new RESTClient(testURL)
+    @Shared def testURL
+    @Shared RESTClient restClient
+
+    def setupSpec() {
+        testURL = "http://localhost:8090"
+        restClient = new RESTClient(testURL)
+    }
 
     def "1 - The user should be greeted as 'world' when hitting the /greeting path"() {
         when: "The user hits the /greeting path"

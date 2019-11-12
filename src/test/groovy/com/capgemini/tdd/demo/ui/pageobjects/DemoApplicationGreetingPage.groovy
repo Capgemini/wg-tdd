@@ -4,7 +4,7 @@ import geb.Page
 
 class DemoApplicationGreetingPage extends Page {
 
-    static url = "http://localhost:8080"
+    static url = "http://localhost:8090"
 
     static at = { browser.driver.currentUrl.contains(url) && greetingId.displayed }
 

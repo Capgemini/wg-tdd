@@ -1,8 +1,13 @@
 package com.capgemini.tdd.demo.ui.specs
 
+import com.capgemini.tdd.demo.DemoApplication
 import com.capgemini.tdd.demo.ui.pageobjects.DemoApplicationGreetingPage
 import geb.spock.GebSpec
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.TestPropertySource
 
+@SpringBootTest(classes = DemoApplication, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@TestPropertySource(properties = "server.port=8090")
 class DemoApplicationUISpec extends GebSpec {
 
     def "1 - The user accesses the Greeting page and asserts the page has loaded"() {
