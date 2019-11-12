@@ -129,8 +129,8 @@
 				<version>3.0.0-M3</version>
 				<configuration>
 					<includes>
-						<include>**/it/*ITSpec.*</include>
-						<include>**/ui/*UISpec.*</include>
+						<include>**/it/specs/*ITSpec.*</include>
+						<include>**/ui/specs/*UISpec.*</include>
 					</includes>
 				</configuration>
 				<executions>
