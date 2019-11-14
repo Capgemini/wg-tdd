@@ -68,7 +68,7 @@ public class NumberService {
                 if(num >= 100){
                     output += ", ";
                 }
-                else{
+                else if (num > 0) {
                     output += " and ";
                 }
 
