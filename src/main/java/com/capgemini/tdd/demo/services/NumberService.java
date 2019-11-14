@@ -19,7 +19,7 @@ public class NumberService {
         digits.put(4,"Four");
         digits.put(5,"Five");
         digits.put(6,"Six");
-        digits.put(7,"Severn");
+        digits.put(7,"Seven");
         digits.put(8,"Eight");
         digits.put(9,"Nine");
         digits.put(10,"Ten");

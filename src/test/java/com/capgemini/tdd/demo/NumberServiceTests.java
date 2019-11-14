@@ -67,11 +67,13 @@ class NumberServiceTests {
     @Test
     void convert0To9999(){
         int i = 0;
-        while(i<999){
+        while(i<9999){
             System.out.println(service.convert(i));
             i++;
         }
         assertEquals("Nine Hundred and Ninety Nine", service.convert(999));
     }
+    @Test
+    void convert1000(){ assertEquals("One Thousand", service.convert(1000));}
 
 }
